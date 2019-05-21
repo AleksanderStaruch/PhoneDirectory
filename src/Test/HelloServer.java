@@ -19,8 +19,9 @@ public class HelloServer extends UnicastRemoteObject implements HelloInterface{
     }
 
     public static void main(String[] args){
+        System.setProperty("java.rmi.server.hostname","localhost");
         try {
-            Naming.rebind("rmi://localhost:1099/Server", new HelloServer());
+            Naming.rebind("//localhost:5000/Server", new HelloServer());
             System.err.println("Server ready");
         } catch (Exception e) {
             System.err.println("Server exception: " + e.toString());

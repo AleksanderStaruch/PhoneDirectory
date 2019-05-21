@@ -12,7 +12,7 @@ public class HelloClient {
 
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
 
-        look_up = (HelloInterface) Naming.lookup("rmi://localhost:1099/Server");
+        look_up = (HelloInterface) Naming.lookup("//localhost:5000/Server");
         String txt = JOptionPane.showInputDialog("What is your name?");
 
         String response = look_up.sayHello(txt);
